@@ -5,7 +5,7 @@ var fs = require('fs')
 var Owlbot = require('owlbot-js')
 
 var path = require('path');
-var client = Owlbot('a06cc7623884a03fd1d2d1e224b27e4834603cbc');
+var client = Owlbot('5a7eb608e2f77faca3115a96aaf7db1c5a0d50f4');
 
 var words = [], meaning = [], example = [];
 
