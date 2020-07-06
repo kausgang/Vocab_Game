@@ -70,3 +70,54 @@ a {
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
 }
+
+
+
+
+
+/* https://grid.layoutit.com/ */
+.grid-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1% 10% 89%;
+  gap: 1px 1px;
+  grid-template-areas: "." "." ".";
+  
+}
+
+
+.words{
+  font-size: large;
+  margin: 3px;
+
+}
+
+.meaning{
+  font-size: large;
+}
+
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  flex: 0 0 auto;
+}
+
+#top{
+  border: solid;
+  /* position: fixed; */
+}
+
+#main_content{
+  /* overflow-y: scroll; */
+  flex: 1;
+}
+
+.footer{
+  flex: 0 0 auto;
+}
+
+/* FLEX NEVER WORKED */

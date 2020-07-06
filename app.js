@@ -13,6 +13,7 @@ var usersRouter = require('./routes/users');
 
 var get_words = require('./routes/get_words');
 var create_list = require('./routes/create_list');
+var game_1 = require('./routes/game_1');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.use('/users', usersRouter);
 
 app.use('/get_words', get_words);
 app.use('/create_list', create_list);
+app.use('/game_1', game_1);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

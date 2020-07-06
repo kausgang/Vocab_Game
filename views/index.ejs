@@ -9,10 +9,64 @@
     <!-- <script src="/javascripts/main.js"></script> -->
 
 
+
   </head>
   <body>
     
-    <button type="button" class="button" id="create_list" onclick="location.href = '/get_words'">Create List</button>
+    <div>
+      <button type="button" class="button" id="create_list" onclick="location.href = '/get_words'">Create List</button>
+      <button type="button" class="button" id="create_game_1" onclick = "show_form()" >Game 1</button>
+    </div>
+    
+    <p></p>
+    
+    <div>
+      <form id = "game_1_input" action="/game_1" hidden >
+        <label for="select_list_label">Select List:</label><br>
+        <select name="list" id="list">
+        </select><br>
+        <label for="number_of_words_label">Select Number of Words:</label><br>
+        <input name="word_count" id="word_count" ></input>
+        <br><br>
+
+        <!-- <select name="word_count" id="word_count">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="30">30</option>
+        </select><br><br> -->
+        <input type="submit" value="Submit">
+      </form> 
+    </div>
+
+
+
+
+
+
+
+    <script>
+      function show_form() {
+        var x = document.getElementById("game_1_input");
+
+        // show the input form
+        x.style.display = "block"
+
+        // populate the list data
+        var y = document.getElementById("list");
+        var lists_from_js = "<%= lists %>"
+        var lists = lists_from_js.split(',')
+
+        lists.forEach(element => {
+          var option = document.createElement("option");
+          option.text = element;
+          y.add(option)
+        });
+        
+     
+      }
+      </script>
+
+
 
   </body>
 </html>

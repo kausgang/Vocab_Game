@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+  </head>
+  <body onload="create_puzzle()">
+    
+    <script>
+
+      var word_count = "<%= word_count %>"
+      var game_words = "<%= game_words %>".split(',')
+      var game_meaning = "<%= game_meaning %>".split(',')
+      var game_example = "<%= game_example %>".split(',')
+      var game_meaning_shuffle = "<%= game_meaning_shuffle %>".split(',')
+      var game_example_shuffle = "<%= game_example_shuffle %>".split(',')
+
+      // console.log(game_meaning_shuffle)
+
+      function create_puzzle(){
+
+        if(word_count > 30){
+          alert("more than 30 words - it becomes messy")
+          // send back to home screen
+          window.location.href = '/';
+        }
+
+        for(i=0;i<word_count;i++){
+
+          $("#top").append("<button class='words'>"+game_words[i]+"</button>")
+          $("#main_content").append("<p class='meaning'>"+(i+1)+" - "+game_meaning_shuffle[i]+" <input class='answer'> </input>"+"</p")
+          // $("#right").append("<input class='answer'> </input>")
+
+        }
+
+      }
+
+    //   console.log(game_words)
+
+      function check_answer(){
+
+        
+
+        // collect the answers
+        var given_answers = [];
+        $('.answer').each(function () {
+          given_answers.push($(this).val()); // ids.push(this.id) would work as well.
+          $(this).val('')
+        });
+        
+        
+        var correct_order = [];
+        game_meaning_shuffle.forEach(element => {
+          for(i=0;i<word_count;i++){
+            if(element == game_meaning[i])
+              correct_order.push(i)
+          }
+        });
+        
+
+
+        
+        var correct_answer = []
+        correct_order.forEach(element => {
+          // console.log(game_words[element])
+
+          // game_words[element] now contains the right answers
+          correct_answer.push(game_words[element])
+        });
+
+
+          // console.log(correct_answer)
+          // console.log(given_answers)
+
+          // check answers given against the correct answers
+          var wrong_answer = []
+          for(i=0;i<word_count;i++){
+            if(given_answers[i] != correct_answer[i])
+              wrong_answer.push(correct_answer[i])
+          }
+
+          // console.log(wrong_answer)
+
+          if(wrong_answer.length == 0)
+            alert(" all correct")
+          else
+            alert("wrong answers given -  "+wrong_answer.length+"\n"+wrong_answer)
+
+      }
+
+    </script> 
+
+
+
+
+    
+
+    <div class="page">
+
+      <div class="header">
+
+        <div id="home_button">
+          <button id="home" class="button" onclick=" window.location.href = '/'">HOME</button><p></p>
+        </div>
+        
+        <!-- contains words -->
+        <div id="top">
+        </div>
+
+      </div>
+      
+
+      <!-- contains meaning or example -->
+      <div id='main_content'></div>
+      </div>
+
+      <div class="footer">
+        <button id="submit_answer" class="button" onclick="check_answer()">Submit Answer</button><p></p>
+      </div>
+
+    </div>
+
+
+
+  </body>
+</html>
