@@ -15,6 +15,7 @@
     
     <div>
       <button type="button" class="button" id="create_list" onclick="location.href = '/get_words'">Create List</button>
+      <button type="button" class="button" id="Edit_list" onclick="show_edit_list()">Edit List</button>
       <button type="button" class="button" id="study_list" onclick = "show_form_study()" >Study</button>
       <button type="button" class="button" id="create_game_1" onclick = "show_form_game_1()" >Game 1</button>
       <button type="button" class="button" id="create_game_2" onclick = "show_form_game_2()" >Game 2</button>
@@ -24,42 +25,28 @@
     
     <div>
       <form id = "game_1_input" action="/game_1" hidden >
-        <label for="select_list_label">Select List:</label><br>
+        <label for="select_list_label">Select List for Game 1:</label><br>
         <select name="list" id="list_game_1">
         </select><br><br>
         <label for="number_of_words_label">Select Number of Words:</label><br>
         <input name="word_count" id="word_count" ></input>
         <br><br>
-
-        <!-- <select name="word_count" id="word_count">
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-        </select><br><br> -->
         <input type="submit" value="Submit">
       </form> 
-      <br>
     </div>
 
 
 
     <div>
       <form id = "game_2_input" action="/game_2" hidden >
-        <label for="select_list_label">Select List:</label><br>
+        <label for="select_list_label">Select List for Game 2:</label><br>
         <select name="list" id="list_game_2">
         </select><br><br>
         <label for="number_of_words_label">Select Number of Words:</label><br>
         <input name="word_count" id="word_count" ></input>
         <br><br>
-
-        <!-- <select name="word_count" id="word_count">
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-        </select><br><br> -->
         <input type="submit" value="Submit">
       </form> 
-      <br>
     </div>
 
 
@@ -68,22 +55,25 @@
         <label for="select_list_label">Select List:</label><br>
         <select name="list" id="list_study"><br>
         </select><br><br>
-        
-
-        <!-- <select name="word_count" id="word_count">
-          <option value="10">10</option>
-          <option value="20">20</option>
-          <option value="30">30</option>
-        </select><br><br> -->
         <input type="submit" value="Submit"><br>
       </form> 
-      <br>
+    </div>
+
+
+    <div>
+      <form id = "edit_list_input" action="/edit_list" hidden >
+        <label for="select_list_label">Select List:</label><br>
+        <select name="list" id="edit_list"><br>
+        </select><br><br>
+        <input type="submit" value="Submit"><br>
+      </form> 
     </div>
 
 
 
     <div>
-      <h1>If Dictionry doesn't work</h1>
+      <br>
+      <h1>If Dictionary doesn't work</h1>
       <p></p>
       <img src="./images/1.png" width="80%" height="20%">
       <img src="./images/2.png" width="80%" height="20%">
@@ -110,6 +100,10 @@
 
         // hide the input form for game_2
         var a = document.getElementById("game_2_input");
+        a.style.display = "none"
+
+        // hide the input form for game_1
+        var a = document.getElementById("edit_list_input");
         a.style.display = "none"
 
         // populate the list data
@@ -140,6 +134,10 @@
         var a = document.getElementById("game_2_input");
         a.style.display = "none"
 
+        // hide the input form for game_1
+        var a = document.getElementById("edit_list_input");
+        a.style.display = "none"
+
         // populate the list data
         var y = document.getElementById("list_study");
         var lists_from_js = "<%= lists %>"
@@ -153,8 +151,36 @@
       }
 
 
+      
+      function show_edit_list() {
+        var x = document.getElementById("edit_list_input");
 
+        // show the input form
+        x.style.display = "block"
 
+         // hide the input form for game_1
+         var a = document.getElementById("game_1_input");
+        a.style.display = "none"
+
+        // hide the input form for game_2
+        var a = document.getElementById("game_2_input");
+        a.style.display = "none"
+
+        // hide the input form for study
+        var a = document.getElementById("study_input");
+        a.style.display = "none"
+
+        // populate the list data
+        var y = document.getElementById("edit_list");
+        var lists_from_js = "<%= lists %>"
+        var lists = lists_from_js.split(',')
+
+        lists.forEach(element => {
+          var option = document.createElement("option");
+          option.text = element;
+          y.add(option)
+        });
+      }
 
 
 
@@ -171,6 +197,10 @@
 
         // hide the input form for game_1
         var a = document.getElementById("game_1_input");
+        a.style.display = "none"
+
+        // hide the input form for game_1
+        var a = document.getElementById("edit_list_input");
         a.style.display = "none"
 
         // populate the list data

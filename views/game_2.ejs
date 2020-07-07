@@ -17,6 +17,7 @@
       var puzzle_word = "<%= puzzle_word %>".split(',') // puzzle_word has the solution
       var puzzle_example = "<%= puzzle_example %>".split(',')
 
+      //hint the correct answers in console
       console.log("correct answers = " + puzzle_word)
       
       
@@ -64,9 +65,7 @@
         if(wrong_answer.length == 0)
             alert(" all correct")
         else
-            alert("wrong answers given -  "+wrong_answer.length+"\n"+"question number - " + wrong_answer)
-
-
+            alert("wrong answers given for Question no. -  "+wrong_answer.length+"\n"+"question number - " + wrong_answer)
 
       }
 

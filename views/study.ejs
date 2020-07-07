@@ -21,21 +21,27 @@
 
       function show_list(){
 
+
+        // replace duplicate words with blanks
+        var no_dupe_word = [], no_dupe_serial = [];
+        words.filter(function(element, position) {
+          if(words.indexOf(element) == position){
+            no_dupe_word.push(element)
+            no_dupe_serial.push(position+1)
+          }
+          else{
+            no_dupe_word.push("")
+            no_dupe_serial.push("")
+          }
+        })
+
+
         for(i=0;i<word_count;i++){
 
-          // $("#word_table").append('<tr><td>'+ (++i)
-          //                   +'.</td>'+'<td id="word_study" >'+ words[i] + '</td></tr>');
-          
-          // $("#word_table").append('<td></td><td></td>'
-          // +' .</td>'+'<td id="meaning_study">'+meaning[i]+'</td>');
-
-          // $("#word_table").append('<td></td><td></td>'
-          // +' .</td>'+'<td id="example_study">'+example[i]+'</td>');
-
-         
-          $("#word_table").append('<tr><td>'+ (i+1)
-                            +'.</td>'+'<td id="word_study">'+ words[i] + '</td> <td id="meaning_study">'+meaning[i]+'</td'+'</tr>');
+          $("#word_table").append('<tr><td>'+ no_dupe_serial[i]
+                            +'.</td>'+'<td id="word_study">'+ no_dupe_word[i] + '</td> <td id="meaning_study">'+meaning[i]+'</td'+'</tr>');
           $("#word_table").append('<tr> <td></td> <td></td>'+'<td id="example_study">'+'Example - '+example[i]+'</td>'+'</tr>');
+
 
           // create gap between words
           $("#word_table").append('<tr> <td></td> <td></td> <td></td> </tr>');
@@ -46,6 +52,7 @@
           $("#word_table").append('<tr> <td></td> <td></td> <td></td> </tr>');
           $("#word_table").append('<tr> <td></td> <td></td> <td></td> </tr>');
           $("#word_table").append('<tr> <td></td> <td></td> <td></td> </tr>');
+
         }
 
       }

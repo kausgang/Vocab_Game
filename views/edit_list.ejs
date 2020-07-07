@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+
+
+  </head>
+  <body onload="populate_list()">
+    
+
+    <script>
+
+      var word_count = "<%= word_count %>"
+      var words = "<%= words %>".split(',')
+      var list_name = "<%= list_name %>"
+
+      function populate_list(){
+
+        var new_list_name = document.getElementById('new_list_name')
+        new_list_name.value = list_name;
+        // var new_list_name = document.getElementById('new_word_list')
+        // new_list_name.value = words;
+        for(i=0;i<words.length;i++){
+          $('#new_word_list').append(words[i],'\n')
+        }
+          
+        
+      }
+
+    </script>
+
+    
+      <div id="home_button">
+        <button id="home" class="button" onclick=" window.location.href = '/'">HOME</button><p></p>
+      </div>
+    
+    <div id="input">
+      <label id="list_name_label">Enter List name - </label>
+      <input type="text" id="new_list_name">
+      <p></p>
+      <label id="word_list_label">Enter List of Words - </label>
+      <p></p>
+      <textarea id="new_word_list" rows="25" cols="35"></textarea>
+      <button type="button" class="button" id="edit_list" >Create List</button>
+    </div>
+    
+    <div id="loader"></div>
+
+  </body>
+</html>

@@ -13,11 +13,12 @@
 
       var word_count = "<%= word_count %>"
       var game_words = "<%= game_words %>".split(',')
-      var puzzle_word = "<%= puzzle_word %>".split(',')
-      var puzzle_meaning = "<%= puzzle_meaning %>".split(',')
-      
-      //hint the correct answers in console
-      console.log("correct answers = " + puzzle_word)
+      var game_meaning = "<%= game_meaning %>".split(',')
+      var game_example = "<%= game_example %>".split(',')
+      var game_meaning_shuffle = "<%= game_meaning_shuffle %>".split(',')
+      var game_example_shuffle = "<%= game_example_shuffle %>".split(',')
+
+      // console.log(game_meaning_shuffle)
 
       function create_puzzle(){
 
@@ -30,7 +31,7 @@
         for(i=0;i<word_count;i++){
 
           $("#top").append("<button class='words'>"+game_words[i]+"</button>")
-          $("#main_content").append("<p class='meaning'>"+(i+1)+" - "+puzzle_meaning[i]+" <input class='answer'> </input>"+"</p")
+          $("#main_content").append("<p class='meaning'>"+(i+1)+" - "+game_meaning_shuffle[i]+" <input class='answer'> </input>"+"</p")
           // $("#right").append("<input class='answer'> </input>")
 
         }
@@ -51,23 +52,42 @@
         });
         
         
-        var wrong_answer = []
-        for(i=0;i<word_count;i++){
-
-          if(given_answers[i]!=puzzle_word[i])
-            wrong_answer.push(i+1)
-        }
-
-        if(wrong_answer.length == 0)
-            alert(" all correct")
-        else
-            alert("wrong answers given for Question no. -  "+wrong_answer.length+"\n"+"question number - " + wrong_answer)
-
-
-      
-
+        var correct_order = [];
+        game_meaning_shuffle.forEach(element => {
+          for(i=0;i<word_count;i++){
+            if(element == game_meaning[i])
+              correct_order.push(i)
+          }
+        });
         
 
+
+        
+        var correct_answer = []
+        correct_order.forEach(element => {
+          // console.log(game_words[element])
+
+          // game_words[element] now contains the right answers
+          correct_answer.push(game_words[element])
+        });
+
+
+          // console.log(correct_answer)
+          // console.log(given_answers)
+
+          // check answers given against the correct answers
+          var wrong_answer = []
+          for(i=0;i<word_count;i++){
+            if(given_answers[i] != correct_answer[i])
+              wrong_answer.push(correct_answer[i])
+          }
+
+          // console.log(wrong_answer)
+
+          if(wrong_answer.length == 0)
+            alert(" all correct")
+          else
+            alert("wrong answers given -  "+wrong_answer.length+"\n"+wrong_answer)
 
       }
 

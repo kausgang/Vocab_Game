@@ -31,4 +31,33 @@ $(document).ready(function(){
 
     })
   
+
+    $("#edit_list").click(()=>{
+
+        // get the name of list
+        var list_name = $("#new_list_name").val();
+
+        // get the list of words
+        var words = $("#new_word_list").val();
+        // console.log(list_name)
+
+        $("#input").hide();
+        $("#loader").show();
+
+        $.get("/update_list", {list_name:list_name , word_list:words},
+            function (data, textStatus, jqXHR) {
+             
+                // console.log(data)
+
+                alert(list_name + " created")
+                // $("#loader").hide();
+
+                //redirect to home page after list is created
+                window.location.href = '/';
+
+            }
+            
+        );
+
+    })
 })

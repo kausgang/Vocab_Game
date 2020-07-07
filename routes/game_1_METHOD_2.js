@@ -39,34 +39,38 @@ router.get('/', function(req, res, next) {
   
   // create game arrays
   var game_words = [], game_meaning = [], game_example = []
-  var puzzle = []
   for(i=0;i<word_count;i++){
     var j = random_numbers[i]
-
-    var test = {}
-    test.word = words[j]
-    test.puzzle = meaning[j].replace(/,/g,'')
-    puzzle[i] = test
-
     game_words[i] = words[j]
 
+    // remove comma from game meaning or it will split the text in array
+    game_meaning[i] = meaning[j].replace(/,/g,'')
+    game_example[i] = example[j]
+
+    // create a checked array to verify answer
+
   }
+  // game_words, game_meaning & game_example now contains randomized words picked form database
 
-  var puzzle_shuffle = shuffle(puzzle,{'copy':true})
-  var puzzle_word = [], puzzle_meaning = []
-  puzzle_shuffle.forEach(element => {
 
-    puzzle_word.push(element.word)
-    puzzle_meaning.push(element.puzzle)
-    
-  });
+  
 
+
+  // shuffle the game_meaning/game_example array
+  var game_meaning_shuffle = shuffle(game_meaning,{'copy':true})
+  var game_example_shuffle = shuffle(game_example,{'copy':true})
+
+  // console.log(game_meaning)
+  // console.log(game_meaning_shuffle)
+
+  // res.send('respond with a resource');
   res.render('game_1', { 
     word_count:word_count,
     game_words:game_words,
-    puzzle_word:puzzle_word,
-    puzzle_meaning:puzzle_meaning
-
+    game_meaning:game_meaning,
+    game_example:game_example,
+    game_meaning_shuffle:game_meaning_shuffle,
+    game_example_shuffle:game_example_shuffle
    });
 
 

@@ -13,6 +13,8 @@ var usersRouter = require('./routes/users');
 
 var get_words = require('./routes/get_words');
 var create_list = require('./routes/create_list');
+var edit_list = require('./routes/edit_list');
+var update_list = require('./routes/update_list');
 var game_1 = require('./routes/game_1');
 var game_2 = require('./routes/game_2');
 var study = require('./routes/study');
@@ -40,6 +42,8 @@ app.use('/users', usersRouter);
 
 app.use('/get_words', get_words);
 app.use('/create_list', create_list);
+app.use('/edit_list', edit_list);
+app.use('/update_list', update_list);
 app.use('/game_1', game_1);
 app.use('/game_2', game_2);
 app.use('/study', study);

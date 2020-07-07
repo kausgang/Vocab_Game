@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
 
           var test = {}
           test.word = game_words[i]
-          test.puzzle = game_example[i].replace(game_words[i], '____')
+          test.puzzle = game_example[i].replace(game_words[i], '____________')
           puzzle[i] = test
           
         }
