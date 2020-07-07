@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    
+  </head>
+  <body onload="create_puzzle()">
+    
+    <script>
+
+     
+      var word_count = "<%= word_count %>"
+      var game_words = "<%= game_words %>".split(',')
+      var puzzle_word = "<%= puzzle_word %>".split(',') // puzzle_word has the solution
+      var puzzle_example = "<%= puzzle_example %>".split(',')
+
+      console.log("correct answers = " + puzzle_word)
+      
+      
+      function create_puzzle(){
+
+        if(word_count > 30){
+          alert("more than 30 words - it becomes messy")
+          // send back to home screen
+          window.location.href = '/';
+        }
+
+
+        for(i=0;i<word_count;i++){
+
+          $("#top").append("<button class='words'>"+game_words[i]+"</button>")
+          $("#main_content").append("<p class='meaning'>"+(i+1)+" - "+puzzle_example[i]+" <input class='answer'> </input>"+"</p")
+          // $("#right").append("<input class='answer'> </input>")
+
+        }
+
+      }
+
+
+      function check_answer(){
+
+        
+
+        // collect the answers
+        // given_answers has all the answers given
+        var given_answers = [];
+        $('.answer').each(function () {
+          given_answers.push($(this).val()); // ids.push(this.id) would work as well.
+          $(this).val('')
+        });
+        
+        
+
+        var wrong_answer = []
+        for(i=0;i<word_count;i++){
+
+          if(given_answers[i]!=puzzle_word[i])
+            wrong_answer.push(i+1)
+        }
+
+        if(wrong_answer.length == 0)
+            alert(" all correct")
+        else
+            alert("wrong answers given -  "+wrong_answer.length+"\n"+"question number - " + wrong_answer)
+
+
+
+      }
+
+    </script> 
+
+
+
+
+    
+
+    <div class="page">
+
+      <div class="header">
+
+        <div id="home_button">
+          <button id="home" class="button" onclick=" window.location.href = '/'">HOME</button><p></p>
+        </div>
+        
+        <!-- contains words -->
+        <div id="top">
+        </div>
+
+      </div>
+      
+
+      <!-- contains meaning or example -->
+      <div id='main_content'></div>
+      </div>
+
+      <div class="footer">
+        <button id="submit_answer" class="button" onclick="check_answer()">Submit Answer</button><p></p>
+      </div>
+
+    </div>
+
+
+
+  </body>
+</html>

@@ -58,7 +58,7 @@ router.get('/', function(req, res, next) {
     
           // ...and continue emitting lines.
           lr.resume();
-      }, 300);
+      }, 500);
     });
     
     lr.on('end', function () {
