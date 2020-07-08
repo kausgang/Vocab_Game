@@ -75,9 +75,11 @@
         else{
             // alert("wrong answers given for Question no. -  "+wrong_answer.length+"\n"+"question number - " + wrong_answer)
             wrong_answer.forEach(element => {
+
               var item = "#item_"+element
               // $(item).css("background-color", "#FFCCCC");
-              $(item).css("color", "red");
+              // $(item).css("color", "red");
+              $(item).append("&nbsp&nbsp <b><i><u>"+puzzle_word[element-1]).css("color", "red");
             });
           }
         
