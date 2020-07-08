@@ -23,15 +23,19 @@ router.get('/', function(req, res, next) {
   // seggregate words meaning and example array
   var words = data.words
   var meaning_1 = data.meaning;
-  var example = data.example
+  var example_1 = data.example
 
   var word_count = words.length;
-  var meaning = [];
+  var meaning = [],example =[];
 
   for(i=0;i<word_count;i++){
     
       // remove comma from game meaning or it will split the text in array
     meaning.push(meaning_1[i].replace(/,/g,'')) 
+    if(example_1[i]!=null)
+      example.push(example_1[i].replace(/,/g,''))
+    else  
+      example.push(example_1[i])
   }
 
   

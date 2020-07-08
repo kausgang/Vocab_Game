@@ -89,7 +89,7 @@ function save_result(game,wrong_answer){
                 // $("#loader").hide();
 
                 //redirect to home page after list is created
-                window.location.href = '/';
+                // window.location.href = '/';
 
             }
             

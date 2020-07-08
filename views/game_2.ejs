@@ -35,9 +35,10 @@
         for(i=0;i<word_count;i++){
 
           $("#top").append("<button class='words'>"+game_words[i]+"</button>")
-          $("#main_content").append("<p class='meaning'>"+(i+1)+" - "+puzzle_example[i]+" <input class='answer'> </input>"+"</p")
-          // $("#right").append("<input class='answer'> </input>")
+          $("#main_content").append("<p class='meaning' id='item_"+(i+1)+"'>"+(i+1)+" - "+puzzle_example[i]+" <input class='answer'> </input>"+"</p")
+          // $("#main_content").append("<p class='meaning'>"+(i+1)+" - "+puzzle_example[i]+" <input class='answer'> </input>"+"</p")
 
+          
         }
 
       }
@@ -45,7 +46,8 @@
 
       function check_answer(){
 
-        
+        // hide the submit answer button
+        $("#submit_answer").hide();
 
         // collect the answers
         // given_answers has all the answers given
@@ -66,9 +68,15 @@
 
         if(wrong_answer.length == 0)
             alert(" all correct")
-        else
-            alert("wrong answers given for Question no. -  "+wrong_answer.length+"\n"+"question number - " + wrong_answer)
-
+        else{
+            // alert("wrong answers given for Question no. -  "+wrong_answer.length+"\n"+"question number - " + wrong_answer)
+            wrong_answer.forEach(element => {
+              var item = "#item_"+element
+              // $(item).css("background-color", "#FFCCCC");
+              $(item).css("color", "red");
+            });
+          }
+        
 
         // save result
         save_result('game_2',wrong_answer.length);
