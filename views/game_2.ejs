@@ -20,7 +20,11 @@
       var puzzle_example = "<%= puzzle_example %>".split(',')
 
       //hint the correct answers in console
-      console.log("correct answers = " + puzzle_word)
+      console.log("correct answers = \n")
+      for(i=0;i<puzzle_word.length;i++){
+        console.log((i+1)+' - ' + puzzle_word[i]+'\n') 
+      }
+      
       
       
       function create_puzzle(){
@@ -54,7 +58,7 @@
         var given_answers = [];
         $('.answer').each(function () {
           given_answers.push($(this).val()); // ids.push(this.id) would work as well.
-          $(this).val('')
+          // $(this).val('')
         });
         
         
