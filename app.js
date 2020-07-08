@@ -18,6 +18,8 @@ var update_list = require('./routes/update_list');
 var game_1 = require('./routes/game_1');
 var game_2 = require('./routes/game_2');
 var study = require('./routes/study');
+var save_result = require('./routes/save_result');
+var report = require('./routes/report');
 
 var app = express();
 
@@ -47,6 +49,8 @@ app.use('/update_list', update_list);
 app.use('/game_1', game_1);
 app.use('/game_2', game_2);
 app.use('/study', study);
+app.use('/save_result', save_result);
+app.use('/report', report);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

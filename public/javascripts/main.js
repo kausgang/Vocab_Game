@@ -1,3 +1,4 @@
+// JQuery
 $(document).ready(function(){
 
     $("#loader").hide();
@@ -60,4 +61,37 @@ $(document).ready(function(){
         );
 
     })
+
+   
 })
+
+
+// save result game_1
+function save_result(game,wrong_answer){
+
+    
+    // var now = new Date().toLocaleString().replace(",","").replace(/:/g,"_").replace(/\//g,"_").replace(/\ /g,"_")
+    var now = new Date().toLocaleString().replace(",","")
+    // var now = new Date().getMilliseconds();
+    // var now = new Date().toLocaleString()
+    
+    
+    // console.log(now)
+
+    $.get("/save_result", {game:game, wrong_answer:wrong_answer, game_date:now},
+            function (resp, textStatus, jqXHR) {
+             
+                // console.log(data)
+
+                alert("game data saved")
+                // $("#loader").hide();
+
+                //redirect to home page after list is created
+                window.location.href = '/';
+
+            }
+            
+        );
+
+
+}

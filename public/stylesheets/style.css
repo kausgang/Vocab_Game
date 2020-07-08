@@ -137,3 +137,13 @@ a {
   font-size: large;
   color: #0fb917;
 }
+
+
+#report {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* grid-template-rows: 100%; */
+  /* gap: 1px 1px; */
+  grid-template-areas: "." ".";
+  
+}
