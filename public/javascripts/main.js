@@ -13,6 +13,7 @@ $(document).ready(function(){
         console.log(words)
 
         $("#input").hide();
+        $("#home").hide()
         $("#loader").show();
 
         $.get("/create_list", {list_name:list_name , word_list:words},
@@ -43,6 +44,7 @@ $(document).ready(function(){
         // console.log(list_name)
 
         $("#input").hide();
+        $("#home").hide()
         $("#loader").show();
 
         $.get("/update_list", {list_name:list_name , word_list:words},
