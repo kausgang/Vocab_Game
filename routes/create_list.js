@@ -52,12 +52,14 @@ router.get('/', function(req, res, next) {
       lr.pause();
     
       // ...do your asynchronous line processing..
-        find_meaning(word)
+      find_meaning(word)
+        
     
       setTimeout(function () {
     
           // ...and continue emitting lines.
           lr.resume();
+
       }, 500);
     });
     
@@ -91,6 +93,7 @@ function find_meaning(word) {
           meaning.push(element.definition)
           example.push(element.example)
       })
+
   })
   .catch(message =>{
       console.log(word + " was not found in dictionary")

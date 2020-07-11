@@ -43,9 +43,27 @@ router.get('/', function(req, res, next) {
 
   // find word_count number of random numbers between 0 and list_length
   var random_numbers = []
-  for(i=0;i<word_count;i++){
-    random_numbers.push(getRandomInt(list_length))
-  }
+  // for(i=0;i<word_count;i++){
+  //   random_numbers.push(getRandomInt(list_length))
+  // }
+
+  if(word_count<=list_length)
+   {
+    do {
+      let num = Math.floor(Math.random() * list_length + 1);
+      random_numbers.push(num);
+      random_numbers = random_numbers.filter((item, index) => {
+        return random_numbers.indexOf(item) === index
+      });
+    } while (random_numbers.length < word_count);
+   }
+   else //if list length is less than word count - there will be repeatation
+   {
+     for(i=0;i<word_count;i++){
+        random_numbers.push(getRandomInt(list_length))
+      }
+   }
+
   
   
 

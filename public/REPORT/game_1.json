@@ -1,5 +1,11 @@
 {
   "game": "game_1",
-  "game_date": [],
-  "wrong_answer": []
+  "game_date": [
+    "7/10/2020 10:48:17 PM",
+    "7/11/2020 12:27:54 AM"
+  ],
+  "wrong_answer": [
+    "0",
+    "2"
+  ]
 }
