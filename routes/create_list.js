@@ -1,13 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
+var request = require('request');
+var cheerio = require('cheerio');
+
 var fs = require('fs')
 var Owlbot = require('owlbot-js')
 
 var path = require('path');
+const { setUncaughtExceptionCaptureCallback } = require('process');
 var client = Owlbot('5a7eb608e2f77faca3115a96aaf7db1c5a0d50f4');
 
-var words = [], meaning = [], example = [];
+var words = [], meaning = [], example = [], sentence = [], sentence_word = []
 
 var DESTINATION_FOLDER = './public/DATABASE'
 
@@ -53,6 +57,7 @@ router.get('/', function(req, res, next) {
     
       // ...do your asynchronous line processing..
       find_meaning(word)
+      find_example(word)
         
     
       setTimeout(function () {
@@ -60,12 +65,18 @@ router.get('/', function(req, res, next) {
           // ...and continue emitting lines.
           lr.resume();
 
-      }, 500);
+      }, 1000);
     });
     
     lr.on('end', function () {
       // All lines are read, file is closed now.
-      write_file(list_name,words,meaning,example)
+      if(words.length !=0)
+        write_file(list_name,words,meaning,example)
+
+      if(sentence_word.length !=0)
+        write_file_sentence(list_name)
+
+      
 
       // send response
       res.send("done")
@@ -85,8 +96,8 @@ function find_meaning(word) {
 
   client.define(word).then( result => { 
 
-      // pronunciation.push({"word": word, "pronunciation": result.pronunciation});
-      console.log(result)
+      
+      // console.log(result)
       var definitions = JSON.parse(JSON.stringify(result.definitions))
       definitions.forEach(element =>{
           words.push(word)
@@ -102,6 +113,38 @@ function find_meaning(word) {
 }
 
 
+
+function find_example(word){
+
+    var url = "https://sentence.yourdictionary.com/"+ word;
+
+    request.get(url, function(err,responsecode,body) {
+   
+      console.log("finding sentences for "+ word)
+     
+      try{
+
+        var $ = cheerio.load(body);
+        var example = $('.sentence-list').html()
+        var $ = cheerio.load(example);   
+        var sentences = $("p").text().replace(/\([\s\S]*?\)/g, '').split('.')
+
+        for(i=0;i<sentences.length;i++){
+          if(sentences[i]!=""){
+            sentence_word.push(word)
+            sentence.push(sentences[i])
+          }
+          else return;    
+        }
+      }catch{
+        console.log('Could not find sentences with the word -  ' + word)
+        return;
+      }
+    })
+}
+
+
+
 function write_file(list_name,words,meaning,example){
   var obj = {}
   obj.words = words
@@ -110,8 +153,23 @@ function write_file(list_name,words,meaning,example){
   var filename = path.join(DESTINATION_FOLDER,list_name)+'.json'
   fs.writeFileSync(filename,JSON.stringify(obj,null,2));
 
+  
+}
+
+
+function write_file_sentence(list_name){
+  var obj = {}
+  obj.words = sentence_word
+  obj.sentence = sentence
+  
+  var filename = path.join(DESTINATION_FOLDER,list_name)+'_example.json'
+  fs.writeFileSync(filename,JSON.stringify(obj,null,2));
+  
+
   // delete the temp file
   fs.unlinkSync('./public/temp')
+
+ 
 }
 
 module.exports = router;

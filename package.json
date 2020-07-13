@@ -6,18 +6,20 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "line-by-line": "^0.1.6",
-    "morgan": "~1.9.1",
-    "owlbot-js": "^2.0.0",
-    "shuffle-array": "^1.0.1"
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "debug": "latest",
+    "ejs": "latest",
+    "express": "latest",
+    "http-errors": "latest",
+    "line-by-line": "latest",
+    "morgan": "latest",
+    "owlbot-js": "latest",
+    "shuffle-array": "latest",
+    "cheerio": "latest",
+    "request": "latest"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "latest"
   }
 }

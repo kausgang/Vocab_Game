@@ -40,9 +40,9 @@
     "document",
     "dogmatic",
     "dormant",
-    "dupe",
-    "dupe",
     "ebullient",
+    "dupe",
+    "dupe",
     "eclectic",
     "efficacy",
     "effrontery",
@@ -54,7 +54,9 @@
     "emulate",
     "endemic",
     "endemic",
-    "endemic"
+    "endemic",
+    "enervate",
+    "enervate"
   ],
   "meaning": [
     "a division or contrast between two things that are or are represented as being opposed or entirely different.",
@@ -97,9 +99,9 @@
     "record (something) in written, photographic, or other form.",
     "inclined to lay down principles as undeniably true.",
     "(of an animal) having normal physical functions suspended or slowed down for a period of time; in or as if in a deep sleep.",
+    "cheerful and full of energy.",
     "deceive; trick.",
     "a victim of deception.",
-    "cheerful and full of energy.",
     "deriving ideas, style, or taste from a broad and diverse range of sources.",
     "the ability to produce a desired or intended result.",
     "insolent or impertinent behaviour.",
@@ -111,7 +113,9 @@
     "match or surpass (a person or achievement), typically by imitation.",
     "(of a plant or animal) native or restricted to a certain place.",
     "an endemic plant or animal.",
-    "(of a disease or condition) regularly found among particular people or in a certain area."
+    "(of a disease or condition) regularly found among particular people or in a certain area.",
+    "make (someone) feel drained of energy or vitality.",
+    "lacking in energy or vitality."
   ],
   "example": [
     "a rigid <b>dichotomy between</b> science and mysticism",
@@ -154,9 +158,9 @@
     "the photographer spent years documenting the lives of miners",
     "she was not tempted to be dogmatic about what she believed",
     "dormant butterflies",
+    "she sounded ebullient and happy",
     "the newspaper was <b>duped into</b> publishing an untrue story",
     "men who were simply the dupes of their unscrupulous leaders",
-    "she sounded ebullient and happy",
     "universities offering an eclectic mix of courses",
     "there is little information on the efficacy of this treatment",
     "one juror <b>had the effrontery to</b> challenge the coroner's decision",
@@ -168,6 +172,8 @@
     "most rulers wished to emulate Alexander the Great",
     "a marsupial <b>endemic to</b> north-eastern Australia",
     "there are three types of island endemics",
-    "complacency is <b>endemic in</b> industry today"
+    "complacency is <b>endemic in</b> industry today",
+    "enervating heat",
+    "the enervate slightness of his frail form"
   ]
 }

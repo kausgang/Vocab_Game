@@ -17,6 +17,7 @@ var edit_list = require('./routes/edit_list');
 var update_list = require('./routes/update_list');
 var game_1 = require('./routes/game_1');
 var game_2 = require('./routes/game_2');
+var game_2_extra = require('./routes/game_2_extra')
 var study = require('./routes/study');
 var save_result = require('./routes/save_result');
 var report = require('./routes/report');
@@ -48,6 +49,7 @@ app.use('/edit_list', edit_list);
 app.use('/update_list', update_list);
 app.use('/game_1', game_1);
 app.use('/game_2', game_2);
+app.use('/game_2_extra', game_2_extra);
 app.use('/study', study);
 app.use('/save_result', save_result);
 app.use('/report', report);

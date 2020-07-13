@@ -19,6 +19,7 @@
       <button type="button" class="button" id="study_list" onclick = "show_form_study()" >Study</button>
       <button type="button" class="button" id="create_game_1" onclick = "show_form_game_1()" >Game 1</button>
       <button type="button" class="button" id="create_game_2" onclick = "show_form_game_2()" >Game 2</button>
+      <button type="button" class="button" id="create_game_2_extra" onclick = "show_form_game_2_extra()" >Game 2 Extra</button>
       <button type="button" class="button" id="stats" onclick="location.href = '/report'" >Report</button>
     </div>
     
@@ -42,6 +43,20 @@
       <form id = "game_2_input" action="/game_2" hidden >
         <label for="select_list_label">Select List for Game 2:</label><br>
         <select name="list" id="list_game_2">
+        </select><br><br>
+        <label for="number_of_words_label">Select Number of Words:</label><br>
+        <input name="word_count" id="word_count" ></input>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form> 
+    </div>
+
+
+
+    <div>
+      <form id = "game_2_input_extra" action="/game_2_extra" hidden >
+        <label for="select_list_label">Select List for Game 2 Extra:</label><br>
+        <select name="list" id="list_game_2_extra">
         </select><br><br>
         <label for="number_of_words_label">Select Number of Words:</label><br>
         <input name="word_count" id="word_count" ></input>
@@ -103,6 +118,10 @@
         var a = document.getElementById("game_2_input");
         a.style.display = "none"
 
+        // hide the input form for game_2
+        var a = document.getElementById("game_2_input_extra");
+        a.style.display = "none"
+
         // hide the input form for game_1
         var a = document.getElementById("edit_list_input");
         a.style.display = "none"
@@ -133,6 +152,10 @@
 
         // hide the input form for game_2
         var a = document.getElementById("game_2_input");
+        a.style.display = "none"
+
+        // hide the input form for game_2
+        var a = document.getElementById("game_2_input_extra");
         a.style.display = "none"
 
         // hide the input form for game_1
@@ -167,6 +190,10 @@
         var a = document.getElementById("game_2_input");
         a.style.display = "none"
 
+        // hide the input form for game_2
+        var a = document.getElementById("game_2_input_extra");
+        a.style.display = "none"
+
         // hide the input form for study
         var a = document.getElementById("study_input");
         a.style.display = "none"
@@ -176,6 +203,7 @@
         var lists_from_js = "<%= lists %>"
         var lists = lists_from_js.split(',')
 
+        
         lists.forEach(element => {
           var option = document.createElement("option");
           option.text = element;
@@ -204,6 +232,10 @@
         var a = document.getElementById("edit_list_input");
         a.style.display = "none"
 
+        // hide the input form for game_2_extra
+        var a = document.getElementById("game_2_input_extra");
+        a.style.display = "none"
+
         // populate the list data
         var y = document.getElementById("list_game_2");
         var lists_from_js = "<%= lists %>"
@@ -217,6 +249,50 @@
         
 
       }
+
+
+
+
+
+
+
+
+      function show_form_game_2_extra() {
+
+        var x = document.getElementById("game_2_input_extra");
+
+        // show the input form for game_1
+        x.style.display = "block"
+
+        // hide the input form for study
+        var a = document.getElementById("study_input");
+        a.style.display = "none"
+
+        // hide the input form for game_1
+        var a = document.getElementById("game_1_input");
+        a.style.display = "none"
+
+        // hide the input form for game_2
+        var a = document.getElementById("game_2_input");
+        a.style.display = "none"
+
+        // hide the input form for game_1
+        var a = document.getElementById("edit_list_input");
+        a.style.display = "none"
+
+        // populate the list data
+        var y = document.getElementById("list_game_2_extra");
+        var lists_from_js = "<%= list_example %>"
+        var lists = lists_from_js.split(',')
+
+        lists.forEach(element => {
+          var option = document.createElement("option");
+          option.text = element;
+          y.add(option)
+      });
+
+
+}
 
       </script>
 

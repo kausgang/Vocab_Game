@@ -7,7 +7,7 @@ const path = require('path');
 
 
 const directoryPath = path.join('./public', 'DATABASE');
-var lists = []
+var lists = [], list_example = []
 
 fs.exists(directoryPath, function (exists) {
 
@@ -21,8 +21,12 @@ fs.exists(directoryPath, function (exists) {
         return console.log('Unable to scan directory: ' + err);
       } 
       files.forEach(function (file) {
-        // Extract only the file name
-        lists.push(file.slice(0,-5)) 
+
+        if((file.slice(file.length-12,file.length-5)) != 'example')
+          // Extract only the file name
+          lists.push(file.slice(0,-5)) 
+        else
+          list_example.push(file.slice(0,-5))
 
     });
     })
@@ -45,7 +49,7 @@ fs.exists(directoryPath, function (exists) {
 router.get('/', function(req, res, next) {
 
    
-  res.render('index', { title: 'Express', lists:lists });
+  res.render('index', { title: 'Express', lists:lists , list_example:list_example });
 
 
 });

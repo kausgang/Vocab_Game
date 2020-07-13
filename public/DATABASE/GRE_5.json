@@ -1,8 +1,8 @@
 {
   "words": [
+    "immutable",
     "impair",
     "impassive",
-    "immutable",
     "impede",
     "impermeable",
     "imperturbable",
@@ -49,12 +49,13 @@
     "latent",
     "laud",
     "laud",
-    "lethargic"
+    "lethargic",
+    "levee"
   ],
   "meaning": [
+    "unchanging over time or unable to be changed.",
     "weaken or damage (something, especially a faculty or function).",
     "not feeling or showing emotion.",
-    "unchanging over time or unable to be changed.",
     "delay or prevent (someone or something) by obstructing them; hinder.",
     "not allowing fluid to pass through.",
     "unable to be upset or excited; calm.",
@@ -101,12 +102,13 @@
     "(of a quality or state) existing but not yet developed or manifest; hidden or concealed.",
     "praise (a person or their achievements) highly.",
     "praise.",
-    "affected by lethargy; sluggish and apathetic."
+    "affected by lethargy; sluggish and apathetic.",
+    "an embankment built to prevent the overflow of a river."
   ],
   "example": [
+    "an immutable fact",
     "a noisy job could permanently impair their hearing",
     "his cold, impassive face",
-    "an immutable fact",
     "the sap causes swelling which can impede breathing",
     "an impermeable membrane",
     "an imperturbable tranquillity",
@@ -153,6 +155,7 @@
     "they have a huge reserve of latent talent",
     "the obituary lauded him as a great statesman and soldier",
     "all glory, laud, and honour to Thee Redeemer King",
-    "I felt tired and a little lethargic"
+    "I felt tired and a little lethargic",
+    null
   ]
 }

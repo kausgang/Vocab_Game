@@ -54,7 +54,8 @@
     "belie",
     "beneficent",
     "bolster",
-    "bolster"
+    "bolster",
+    "bombastic"
   ],
   "meaning": [
     "(of something unpleasant or severe) become less intense or widespread.",
@@ -111,7 +112,8 @@
     "fail to fulfil or justify (a claim or expectation).",
     "(of a person) generous or doing good.",
     "a long, thick pillow that is placed under other pillows for support.",
-    "a part on a vehicle or tool providing structural support or reducing friction."
+    "a part on a vehicle or tool providing structural support or reducing friction.",
+    "high-sounding but with little meaning; inflated."
   ],
   "example": [
     "the storm suddenly abated",
@@ -168,6 +170,7 @@
     "the quality of the music seems to belie the criticism",
     "a beneficent landowner",
     "most of them were sitting on the floor which was strewn with cushions, bolsters, and rugs",
-    null
+    null,
+    "bombastic rhetoric"
   ]
 }

@@ -1,16 +1,16 @@
 {
   "words": [
+    "engender",
     "enhance",
     "ephemeral",
     "ephemeral",
-    "engender",
     "equanimity",
     "equivocate",
     "erudite",
     "esoteric",
     "eulogy",
-    "euphemism",
     "exacerbate",
+    "euphemism",
     "exculpate",
     "exigency",
     "extrapolation",
@@ -45,20 +45,21 @@
     "harangue",
     "homogeneous",
     "hyperbole",
-    "iconoclastic"
+    "iconoclastic",
+    "idolatry"
   ],
   "meaning": [
+    "cause or give rise to (a feeling, situation, or condition).",
     "intensify, increase, or further improve the quality, value, or extent of.",
     "an ephemeral plant.",
     "lasting for a very short time.",
-    "cause or give rise to (a feeling, situation, or condition).",
     "calmness and composure, especially in a difficult situation.",
     "use ambiguous language so as to conceal the truth or avoid committing oneself.",
     "having or showing great knowledge or learning.",
     "intended for or likely to be understood by only a small number of people with a specialized knowledge or interest.",
     "a speech or piece of writing that praises someone or something highly, especially a tribute to someone who has just died.",
-    "a mild or indirect word or expression substituted for one considered to be too harsh or blunt when referring to something unpleasant or embarrassing.",
     "make (a problem, bad situation, or negative feeling) worse.",
+    "a mild or indirect word or expression substituted for one considered to be too harsh or blunt when referring to something unpleasant or embarrassing.",
     "show or declare that (someone) is not guilty of wrongdoing.",
     "an urgent need or demand.",
     "Full Definition of EXTRAPOLATE. transitive verb. 1. : to infer (values of a variable in an unobserved interval) from values within an already observed interval.",
@@ -93,20 +94,21 @@
     "lecture (someone) at length in an aggressive and critical manner.",
     "of the same kind; alike.",
     "exaggerated statements or claims not meant to be taken literally.",
-    "criticizing or attacking cherished beliefs or institutions."
+    "criticizing or attacking cherished beliefs or institutions.",
+    "the worship of idols."
   ],
   "example": [
+    "the issue engendered continuing controversy",
     "his refusal does nothing to enhance his reputation",
     "ephemerals avoid the periods of drought as seeds",
     "fashions are ephemeral: new ones regularly drive out the old",
-    "the issue engendered continuing controversy",
     "she accepted both the good and the bad <b>with equanimity</b>",
     "the government have equivocated too often in the past",
     "Ken could turn any conversation into an erudite discussion",
     "esoteric philosophical debates",
     "a eulogy to the Queen Mother",
-    "the jargon has given us âdownsizingâ as <b>a euphemism for</b> cuts",
     "rising inflation was exacerbated by the collapse of oil prices",
+    "the jargon has given us âdownsizingâ as <b>a euphemism for</b> cuts",
     "the article exculpated the mayor",
     "women worked long hours when the exigencies of the family economy demanded it",
     null,
@@ -141,6 +143,7 @@
     "he harangued the public on their ignorance",
     "if all jobs and workers were homogeneous",
     "he vowed revenge with oaths and hyperboles",
-    "an iconoclastic filmmaker who has pushed the boundaries with every film he's made"
+    "an iconoclastic filmmaker who has pushed the boundaries with every film he's made",
+    "Jeremiah preached against idolatry"
   ]
 }
