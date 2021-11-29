@@ -7,6 +7,8 @@
   },
   "dependencies": {
     "body-parser": "latest",
+    "bootstrap": "^5.1.3",
+    "cheerio": "latest",
     "cookie-parser": "latest",
     "debug": "latest",
     "ejs": "latest",
@@ -15,9 +17,8 @@
     "line-by-line": "latest",
     "morgan": "latest",
     "owlbot-js": "latest",
-    "shuffle-array": "latest",
-    "cheerio": "latest",
-    "request": "latest"
+    "request": "latest",
+    "shuffle-array": "latest"
   },
   "devDependencies": {
     "nodemon": "latest"
