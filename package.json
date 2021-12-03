@@ -6,19 +6,19 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
-    "body-parser": "latest",
+    "body-parser": "^1.19.0",
     "bootstrap": "^5.1.3",
-    "cheerio": "latest",
-    "cookie-parser": "latest",
-    "debug": "latest",
-    "ejs": "latest",
-    "express": "latest",
-    "http-errors": "latest",
-    "line-by-line": "latest",
-    "morgan": "latest",
-    "owlbot-js": "latest",
-    "request": "latest",
-    "shuffle-array": "latest"
+    "cheerio": "^1.0.0-rc.10",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.1",
+    "line-by-line": "^0.1.6",
+    "morgan": "^1.10.0",
+    "owlbot-js": "^2.0.3",
+    "request": "^2.88.2",
+    "shuffle-array": "^1.0.1"
   },
   "devDependencies": {
     "nodemon": "latest"

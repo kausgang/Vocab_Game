@@ -70,17 +70,27 @@
           >
             G-2xtra
           </button>
-          <button
+          <!-- <button
             type="button"
             class="btn btn-primary"
             id="stats"
             onclick="location.href = '/report'"
           >
             Report
-          </button>
+          </button> -->
+
+          <button
+          type="button"
+          class="btn btn-primary"
+          id="stats"
+          onclick="location.href = '/archive_db'"
+        >
+          Archive DB
+        </button>
         </div>
       </div>
-      <div class="row m-3">
+      <div class="row m-3" style="height: 200px">
+        <div class="h-50" >
         <div class="d-flex justify-content-center">
           <form id = "game_1_input" action="/game_1" class="d-none" >
             <label for="select_list_label">Select List for Game 1:</label><br>
@@ -140,6 +150,7 @@
             </select><br><br>
             <input type="submit" class="btn btn-primary" value="Submit"><br>
           </form> 
+        </div>
         </div>
      
       </div>
