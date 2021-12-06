@@ -97,6 +97,7 @@ function find_meaning(word) {
 }
 
 function find_example(word) {
+  // console.log("word is", word);
   var url = "https://sentence.yourdictionary.com/" + word;
 
   request.get(url, function (err, responsecode, body) {
@@ -118,7 +119,7 @@ function find_example(word) {
         } else return;
       }
     } catch {
-      console.log("Could not find sentences with the word -  " + word);
+      // console.log("Some ex -  " + word);
       return;
     }
   });
