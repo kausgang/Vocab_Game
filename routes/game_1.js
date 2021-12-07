@@ -63,7 +63,10 @@ router.get("/", function (req, res, next) {
   for (i = 0; i < word_count; i++) {
     var j = random_numbers[i];
 
+    // console.log("j is", j);
+
     var test = {};
+    if (j === list_length) j = j - 1; //take care of the array index (starting with 0) problem
     test.word = words[j];
     test.puzzle = meaning[j].replace(/,/g, "");
     puzzle[i] = test;
