@@ -37,32 +37,27 @@
 
         for (i = 0; i < word_count; i++) {
           $("#word_table").append(
-            "<tr><td></td>" +
-              '<td id="word_study">' +
+            "<tr>" +
+              '<td id="word_study"> <h2>' +
               no_dupe_word[i] +
-              '</td> <td id="meaning_study">' +
+              "</h2" +
+              '</td><td> :- </td> <td id="meaning_study" style="width: 80%"> <h4>' +
               meaning[i] +
+              "</h4>" +
               "</td" +
               "</tr>"
           );
           $("#word_table").append(
-            "<tr> <td></td> <td></td>" +
-              '<td id="example_study">' +
+            "<tr> <td></td> <td></td> " +
+              '<td id="example_study"> <h4>' +
               "Example - " +
               example[i] +
+              "</h4>" +
               "</td>" +
               "</tr>"
           );
 
-          // create gap between words
-          $("#word_table").append("<tr> <td></td> <td></td> <td></td> </tr>");
-          $("#word_table").append("<tr> <td></td> <td></td> <td></td> </tr>");
-          $("#word_table").append("<tr> <td></td> <td></td> <td></td> </tr>");
-          $("#word_table").append("<tr> <td></td> <td></td> <td></td> </tr>");
-          $("#word_table").append("<tr> <td></td> <td></td> <td></td> </tr>");
-          $("#word_table").append("<tr> <td></td> <td></td> <td></td> </tr>");
-          $("#word_table").append("<tr> <td></td> <td></td> <td></td> </tr>");
-          $("#word_table").append("<tr> <td></td> <td></td> <td></td> </tr>");
+          $("#word_table").append("<tr> <td> <br /> </td> </tr>");
         }
       }
     </script>
@@ -72,7 +67,8 @@
         <div id="home_button">
           <button
             id="home"
-            class="button"
+            type="button"
+            class="btn btn-primary"
             onclick=" window.location.href = '/'"
           >
             HOME
@@ -82,7 +78,7 @@
       </div>
 
       <div id="main_content">
-        <table id="word_table"></table>
+        <table id="word_table" class="table table-borderless"></table>
       </div>
 
       <!-- <div class="footer">
